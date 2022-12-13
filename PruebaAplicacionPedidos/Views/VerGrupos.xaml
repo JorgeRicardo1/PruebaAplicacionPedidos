@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PruebaAplicacionPedidos.Views.VerGrupos">
+    <StackLayout>
+        <SearchBar Placeholder="Buscar por grupo"
+                   Keyboard="Chat"
+                   TextChanged="SearchBar_TextChanged">
+        </SearchBar>
+        <CollectionView ItemsSource="{Binding ModelGrupo}"
+                        x:Name="lstGrupos">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding codigo}"/>
+                            <Label Text="{Binding nombre}"/>
+                            <Label Text="{Binding tipo}"/>
+                            <Label Text="{Binding librecnt }"/>
+                            <Label Text="{Binding librecto }"/>
+                            <Label Text="{Binding acumula }"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentView>
